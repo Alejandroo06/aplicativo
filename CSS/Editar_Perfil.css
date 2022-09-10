@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+
+nav{
+    background: rgb(102, 3, 160);
+    height: 120px;
+    width: 100%;
+}
+.enlace{
+    position: absolute;
+    padding: 0px 100px;
+}
+.logo{
+    height: 120px;
+    position: flex;
+}
+nav ul h1{
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+main{
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    background-color: rgb(102, 3, 160);
+    height: 800px;
+    top: 100px;
+    left: 680px;
+    width: 600px;
+    border-radius: 8px;
+    border: 5px;
+}
+
+main input{
+    width: 500px;
+    margin-top: 50px;
+    padding: 5px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 4px;
+}
+
+main button{
+    padding: 10px 40px;
+    margin-top: 140px;
+    border: none;
+    font-size: 14px;
+    background: rgb(255, 255, 255);
+    font-weight: 600;
+    cursor: cell;
+    color: rgb(0, 0, 0);
+    outline: none;
+    text-transform: uppercase; 
+    border: solid 4px;
+    border-radius: 5px;
+
+}
+
+
+
+
+main li .col{
+    position: relative;
+    top: 15px;
+    background-color: #F2F2F2;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    font-size: 20px;
+    border: 4px solid rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+}
