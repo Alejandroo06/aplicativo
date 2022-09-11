@@ -8,14 +8,10 @@
     $foto=addslashes(file_get_contents($_FILES['foto']['tmp_name']));
     $categorias = $_POST['categorias'];
     $sub_categorias = $_POST['sub_categorias'];
-    $precio = $_POST['precio'];
-   
+    $precio = $_POST['precio']; 
    
     $query = "INSERT INTO producto(nombre_producto, cantidad, descripción,foto, categorias, sub_categorias, precio) 
                 VALUES('$nombre_producto', '$cantidad', '$descripción','$foto', '$categorias', '$sub_categorias', '$precio')";
-    
-    
-
     $ejecutar = mysqli_query($conexion,$query);
 
 
