@@ -70,7 +70,6 @@
         <tbody>
             <?php 
                 while($fila=mysqli_fetch_assoc($resultado)){
-            
             ?>
             <tr>
                 <td><?php echo $fila['id'] ?></td>
@@ -84,7 +83,6 @@
                 <td><?php echo $fila['dirección'] ?></td>
                 <td >
                     <div class="jk"><?php echo "<a href='Eliminar.php?id=".$fila['id']."' onclick='return confirmar()'>ELIMINAR</a>";?></div>
-
                 </td>
             </tr>
             <?php 
@@ -93,8 +91,5 @@
 
             </tbody>
     </table>
-    
-
-    
 </body>
 </html>

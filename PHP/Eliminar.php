@@ -3,7 +3,7 @@
     $id =  $_GET['id'];
     include 'conexion.php';
 
-    $sql="delete from usuarios where id='".$id."'";
+    $sql="DELETE FROM usuarios WHERE id='".$id."'";
     $resultado=mysqli_query($conexion,$sql);
 
     if($resultado){
