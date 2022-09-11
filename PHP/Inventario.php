@@ -1,7 +1,5 @@
 <?php
-
     session_start();
-
     if(!isset($_SESSION['administrador'])){
         echo '
             <script>
@@ -12,13 +10,11 @@
         session_destroy();
         die();
     }
-
     include 'conexion.php';
     //SELECT * FROM producto
-    $sql="SELECT * FROM producto";
+    $sql="SELECT * FROM ingreso_seguimiento";
     $resultado=mysqli_query($conexion,$sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,55 +46,49 @@
             <li><a href="#">inventario</a></li>
             <li><a href="Cerrar_Sesion.php">cerrar sesion</a></li>
         </ul>
-        
     </nav>
-
-
     <h1 class="col">INVENTARIO</h1>
-
-    <main> <li class="bt"><a class="tb" href="Funcion_Inventario.php">AGREGAR PRODUCTO</a></li> </main>
-
-
+    <li class="color_boton1"><a href="IngresoSeguimiento.php"><button >AGREGAR SEGUIMIENTO DE RECOLECTA</button></a></li>
     <table>
         <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Cantidad</th>
-            <th>Descripcion</th>
-            <th>Categoria</th>
-            <th>Sub Categoria</th>
+            <th>Nombre del conductor</th>
+            <th>Fecha de recoleccion</th>
+            <th>Numero de placa</th>
+            <th>Tipo de producto</th>
+            <th>Nombre del cliente</th>
+            <th>Cedula del cliente</th>
             <th>Foto</th>
-            <th>Precio</th>
+            <th>Fecha creacion</th>
+            <th>Fecha modificación</th>
+            <th>Opciones</th>
         </tr>
         <tbody>
             <?php 
                 while($fila=mysqli_fetch_assoc($resultado)){
-            
             ?>
             <tr>
                 <td><?php echo $fila['id'] ?></td>
-                <td><?php echo $fila['nombre_producto'] ?></td>
-                <td><?php echo $fila['cantidad'] ?></td>
-                <td><?php echo $fila['descripción'] ?></td>
-                <td><?php echo $fila['categorias'] ?></td>
-                <td><?php echo $fila['sub_categorias'] ?></td>
+                <td><?php echo $fila['nombre_conductor'] ?></td>
+                <td><?php echo $fila['fecha_ingreso'] ?></td>
+                <td><?php echo $fila['numero_placa'] ?></td>
+                <td><?php echo $fila['tipo_producto'] ?></td>
+                <td><?php echo $fila['nombre_cliente'] ?></td>
+                <td><?php echo $fila['cedula_cliente'] ?></td>
                 <td><img style="width: 150px" src="data:image/jpg;base64, <?php echo base64_encode($fila['foto'])?>" alt=""></td>
-                <td><?php echo $fila['precio'] ?></td>
+                <td><?php echo $fila['created_at'] ?></td>
+                <td><?php echo $fila['updated_at'] ?></td>
                 <td>
-                    <div class="hj"> <?php echo "<li><a href='Editar_Producto.php?id=".$fila['id']."'>EDITAR</a></li>";?></div>
+                    <div class="hj"> <?php echo "<li><a href='EditarIngresoSeguimiento.php?id=".$fila['id']."'>EDITAR</a></li>";?></div>
                     <br>
                     <br>
                     <div class="jh"> <?php  echo "<li><a href='Eliminar_Inventario.php?id=".$fila['id']."' onclick='return confirmar()'>ELIMINAR</a></li>";?></div>
-
                 </td>
             </tr>
             <?php 
                 }
             ?>
-
             </tbody>
     </table>
-    
-    
 </body>
 </html>
