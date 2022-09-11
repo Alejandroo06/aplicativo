@@ -1,0 +1,9 @@
+    .table {
+        border: 1px solid #000;
+        border-collapse: separate;
+        border-spacing: 5px;
+    }
+  
+    .td {
+        border: 1px solid #555;
+    }

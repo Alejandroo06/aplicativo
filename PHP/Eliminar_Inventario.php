@@ -3,7 +3,7 @@
     $id =  $_GET['id'];
     include 'conexion.php';
 
-    $sql="delete from producto where id='".$id."'";
+    $sql="DELETE FROM ingreso_seguimiento WHERE id='".$id."'";
     $resultado=mysqli_query($conexion,$sql);
 
     if($resultado){
